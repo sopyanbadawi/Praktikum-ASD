@@ -9,15 +9,15 @@ public class Tugas3 {
     public static void main(String[] args) {
         
         System.out.print("Masukkan Jumlah Mata Kuliah : ");
-        int n = sc.nextInt();
+        int totMatkul = sc.nextInt();
         sc.nextLine();
 
-        matkul = new String[n];
-        sks = new int[n];
-        semester = new int[n];
-        hari = new String[n];
+        matkul = new String[totMatkul];
+        sks = new int[totMatkul];
+        semester = new int[totMatkul];
+        hari = new String[totMatkul];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < totMatkul; i++) {
             System.out.println("Masukkan untuk Mata Kuliah ke-" + (i + 1));
             System.out.print("Nama Mata Kuliah : ");
             matkul[i] = sc.nextLine();
@@ -43,22 +43,22 @@ public class Tugas3 {
 
             switch (pilih) {
                 case 1:
-                    tampilkanSemuaJadwal(n);
+                    tampilkanSemuaJadwal(totMatkul);
                     break;
                 case 2:
                     System.out.print("Masukkan hari kuliah yang ingin ditampilkan: ");
                     String hariPilihan = sc.nextLine();
-                    tampilkanJadwalBerdasarkanHari(hariPilihan, n);
+                    tampilkanJadwalBerdasarkanHari(hariPilihan, totMatkul);
                     break;
                 case 3:
                     System.out.print("Masukkan semester yang ingin ditampilkan: ");
                     int semesterPilihan = sc.nextInt();
-                    tampilkanJadwalBerdasarkanSemester(semesterPilihan, n);
+                    tampilkanJadwalBerdasarkanSemester(semesterPilihan, totMatkul);
                     break;
                 case 4:
                     System.out.print("Masukkan nama mata kuliah yang dicari: ");
                     String nama = sc.nextLine();
-                    carimatkul(nama, n);
+                    carimatkul(nama, totMatkul);
                     break;
                 case 5:
                     System.out.println("Program selesai.");
@@ -69,46 +69,55 @@ public class Tugas3 {
 
         }
     }
-    static void tampilkanSemuaJadwal(int n) {
+    static void tampilkanSemuaJadwal(int totMatkul) {
         System.out.println("=== Jadwal Kuliah : ===");
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < totMatkul; i++) {
             System.out.println(matkul[i] + " | SKS: " + sks[i] + " | Semester: " + semester[i] + " | Hari: " + hari[i]);
         }
     }
 
-    static void tampilkanJadwalBerdasarkanHari(String hariPilihan, int n) {
+    static void tampilkanJadwalBerdasarkanHari(String hariPilihan, int totMatkul) {
         System.out.println("Jadwal Kuliah di hari " + hariPilihan + ":");
         System.out.println("=====================");
-        for (int i = 0; i < n; i++) {
+        boolean ditemukan = false;
+        for (int i = 0; i < totMatkul; i++) {
             if (hari[i].equalsIgnoreCase(hariPilihan)) {
-                System.out.println(matkul[i] + " | SKS: " + sks[i] + " | Semester: " + semester[i] + " | Hari: " + hari[i]);
-            }else {
-               System.out.println("Data Tidak Ditemukan"); 
-            }
+                System.out.println("Mata Kuliah: " + matkul[i] + " | SKS: " + sks[i] + " | Semester: " + semester[i] + " | Hari: " + hari[i]);
+                ditemukan = true;
+            } 
+        }
+        if (!ditemukan) {
+            System.out.println("Data Tidak Ditemukan");
         }
     }
 
-    static void tampilkanJadwalBerdasarkanSemester(int semesterPilihan, int n) {
+    static void tampilkanJadwalBerdasarkanSemester(int semesterPilihan, int totMatkul) {
         System.out.println("Jadwal Kuliah di Semester " + semesterPilihan + ":");
         System.out.println("=====================");
-        for (int i = 0; i < n; i++) {
+        boolean ditemukan = false;
+        for (int i = 0; i < totMatkul; i++) {
             if (semester[i] == semesterPilihan) {
                 System.out.println(matkul[i] + " | SKS: " + sks[i] + " | Semester: " + semester[i] + " | Hari: " + hari[i]);
-            }else {
-                System.out.println("Data Tidak Ditemukan"); 
+                ditemukan = true;
             }
+        }
+        if (!ditemukan) {
+            System.out.println("Data Tidak Ditemukan");
         }
     }
 
-    static void carimatkul(String nama, int n) {
+    static void carimatkul(String nama, int totMatkul) {
         System.out.println("Hasil Pencarian Mata Kuliah " + nama + ":");
         System.out.println("=====================");
-        for (int i = 0; i < n; i++) {
+        boolean ditemukan = false;
+        for (int i = 0; i < totMatkul; i++) {
             if (matkul[i].equalsIgnoreCase(nama)) {
-                System.out.println(matkul[i] + " | SKS: " + sks[i] + " | Semester: " + semester[i] + " | Hari: " + hari[i]);
-            }else {
-                System.out.println("Data Tidak Ditemukan"); 
+                System.out.println("Mata kuliah: " + matkul[i] + " | SKS: " + sks[i] + " | Semester: " + semester[i] + " | Hari: " + hari[i]);
+                ditemukan = true;
             }
+        }
+        if (!ditemukan) {
+            System.out.println("Data Tidak Ditemukan");
         }
     }
 }
