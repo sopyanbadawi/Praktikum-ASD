@@ -9,6 +9,7 @@ public class MataKuliah04 {
         System.out.println("Masukkan kode mata kuliah: " + kodeMK);
         System.out.println("Masukkan jumlah sks: " + sks);
         System.out.println("Masukkan jumlah jam: " + jmlJam);
+        System.out.println();
     }
 
     void ubahSKS(int sksBaru) {
@@ -17,13 +18,15 @@ public class MataKuliah04 {
 
     void tambahJam(int jam) {
         this.jmlJam += jam;
+        System.out.println("Jumlah jam telah ditambah: " + jam + " jam \n");
     }
 
     void kurangJam(int jam) {
         if (jmlJam > jam) {
             this.jmlJam -= jam;
-        }else {
-            System.out.println("Pengurangan tidak dapat dilakukan!");
+            System.out.println("Jumlah jam telah dikurang: " + jam + " jam \n");
+        } else {
+            System.out.println("Pengurangan tidak dapat dilakukan! \n");
         }
     }
 
