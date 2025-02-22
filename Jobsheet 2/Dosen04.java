@@ -1,6 +1,3 @@
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 public class Dosen04 {
     String idDosen, nama, bidangKeahlian;
     int thBergabung;
