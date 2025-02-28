@@ -5,7 +5,7 @@ class Mahasiswa04 {
     public float ipk;
     
 
-    void cetakInfo() {
+    void cetakInfo() {  //pertanyaan 1
             System.out.println("NIM: " + nim);
             System.out.println("Nama: " + nama);
             System.out.println("Kelas: " + kelas);
