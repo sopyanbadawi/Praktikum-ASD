@@ -7,7 +7,7 @@ public class MataKuliah04 {
     Scanner sc = new Scanner(System.in);
     
     void tambahData(String kode, String nama, int sks, int jmlJam, int i, String dummy) {   //pertanyaan2
-        System.out.println("Masukkan Data Mata Kuliah ke- " + (i + 1));
+            System.out.println("Masukkan Data Mata Kuliah ke- " + (i + 1));
             System.out.print("Kode\t\t: ");
             kode = sc.nextLine();
             System.out.print("Nama Mata Kuliah: ");
