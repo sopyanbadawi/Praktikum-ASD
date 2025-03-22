@@ -1,5 +1,5 @@
 public class Sorting04 {
-    int [] data;
+    int[] data;
     int jumData;
 
     Sorting04(int Data[], int jmlData) {
@@ -11,20 +11,18 @@ public class Sorting04 {
         }
     }
 
-
     void bubbleSort() {
         int temp = 0;
-        for (int i = 0; i < jumData-1; i++) {
+        for (int i = 0; i < jumData - 1; i++) {
             for (int j = 1; j < jumData - i; j++) {
-                if (data[j-1] > data[j]) {
+                if (data[j - 1] > data[j]) {
                     temp = data[j];
-                    data[j] = data[j-1];
-                    data[j-1] = temp;
+                    data[j] = data[j - 1];
+                    data[j - 1] = temp;
                 }
             }
         }
     }
-
 
     void tampil() {
         for (int i = 0; i < jumData; i++) {
@@ -33,11 +31,10 @@ public class Sorting04 {
         System.out.println();
     }
 
-
     void SelectSort() {
-        for (int i = 0; i < jumData-1; i++) {
+        for (int i = 0; i < jumData - 1; i++) {
             int min = i;
-            for (int j = i+1; j < jumData; j++) {
+            for (int j = i + 1; j < jumData; j++) {
                 if (data[j] < data[min]) {
                     min = j;
                 }
@@ -46,5 +43,17 @@ public class Sorting04 {
             data[i] = data[min];
             data[min] = temp;
         }
-    }    
+    }
+
+    void insertSort() {
+        for (int i = 0; i < data.length; i++) {
+            int temp = data[i];
+            int j = i - 1;
+            while (j >= 0 && data[j] > temp) {
+                data[j + 1] = data[j];
+                j--;
+            }
+            data[j + 1] = temp;
+        }
+    }
 }
