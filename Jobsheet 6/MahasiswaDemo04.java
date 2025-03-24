@@ -3,15 +3,12 @@ public class MahasiswaDemo04 {
     
     public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
+    int listMhs = 5;
     MahasiswaBerprestasi04 list = new MahasiswaBerprestasi04();
 
-    int jmlMahasiswa;
-    System.out.print("Masukkan banyak data mahasiswa yang ingin disimpan: ");
-    jmlMahasiswa = sc.nextInt();
     
-    for (int i = 0; i < jmlMahasiswa; i++) {
-        System.out.println("\nMasukkan data mahasiswa ke-" + (i+1));
-        sc.nextLine();
+    for (int i = 0; i < listMhs; i++) {
+        System.out.println("Masukkan data mahasiswa ke-" + (i+1));
         System.out.print("NIM\t: ");
         String nim = sc.nextLine();
         System.out.print("Nama\t: ");
@@ -20,6 +17,7 @@ public class MahasiswaDemo04 {
         String kelas = sc.nextLine();
         System.out.print("IPK\t: ");
         double ipk = sc.nextDouble();
+        sc.nextLine();
         System.out.println("--------------------------");
 
         Mahasiswa04 m = new Mahasiswa04(nim, nama, kelas, ipk);
