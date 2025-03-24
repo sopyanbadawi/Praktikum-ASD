@@ -1,5 +1,6 @@
 public class MahasiswaBerprestasi04 {
-    public static Mahasiswa04[] listMhs = new Mahasiswa04[5];
+    Mahasiswa04[] listMhs = new Mahasiswa04[5];
+
     int idx;
 
     void tambah(Mahasiswa04 m) {
@@ -10,7 +11,6 @@ public class MahasiswaBerprestasi04 {
             System.out.println("Data sudah penuh!");
         }
     }
-
 
     void tampil() {
         for (Mahasiswa04 m : listMhs) {
