@@ -46,7 +46,7 @@ public class Sorting04 {
     }
 
     void insertSort() {
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i <= data.length; i++) {
             int temp = data[i];
             int j = i - 1;
             while (j >= 0 && data[j] > temp) {
