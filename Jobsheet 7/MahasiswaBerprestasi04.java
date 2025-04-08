@@ -73,7 +73,7 @@ public class MahasiswaBerprestasi04 {
         if (pos != -1) {
             System.out.println("data mahasiswa dengan IPK : " + x + " ditemukan pada indeks " + pos);
         } else {
-            System.out.println("data " + x + "tidak ditemukan") ;
+            System.out.println("data " + x + " tidak ditemukan") ;
         }
     }
 
@@ -88,4 +88,18 @@ public class MahasiswaBerprestasi04 {
         }
     }
 
+    int findBinarySearch(double cari, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (left+right)/2;
+            if (cari == listMhs[mid].ipk) {
+                return (mid);                
+            } else if (listMhs[mid].ipk > cari) {
+                return findBinarySearch(cari, mid+1, right); // saya modifikasi karena data terakhir terurut secara descending maka pengecekan saya mulai dari kanan            
+            } else {
+                return findBinarySearch(cari, left, mid-1); // cari di kiri
+            }
+        }
+        return -1;
+    }
 }
