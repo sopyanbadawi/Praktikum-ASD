@@ -1,5 +1,5 @@
 public class MahasiswaBerprestasi04 {
-    Mahasiswa04[] listMhs;
+    Mahasiswa04[] listMhs; //pertanyaan 5
     int idx;
 
     void tambah(Mahasiswa04 m) {

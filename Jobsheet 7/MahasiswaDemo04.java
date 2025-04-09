@@ -6,9 +6,9 @@ public class MahasiswaDemo04 {
     MahasiswaBerprestasi04 list = new MahasiswaBerprestasi04();
     int jumMhs;
 
-    System.out.print("Masukkan jumlah data mahasiswa yang ingin dimasukkan: ");
-    jumMhs = sc.nextInt();
-    list.listMhs = new Mahasiswa04[jumMhs];
+    System.out.print("Masukkan jumlah data mahasiswa yang ingin dimasukkan: "); //pertanyaan 5
+    jumMhs = sc.nextInt(); //pertanyaan 5
+    list.listMhs = new Mahasiswa04[jumMhs]; //pertanyaan 5
     sc.nextLine();
     
     for (int i = 0; i < jumMhs; i++) {
