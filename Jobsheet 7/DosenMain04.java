@@ -99,6 +99,20 @@ public class DosenMain04 {
                     int cariUsia = sc.nextInt();
                     System.out.println("--------------------");
                     int posisiUsia = list.findBinarySearch(cariUsia, 0, dsn.length -1);
+                    if (posisiUsia != -1) {
+                        int count = 0;
+                        for (Dosen04 dataDosen04 : list.dataDosen) {
+                            if (dsn != null && dataDosen04.usia == cariUsia) {
+                                count++;
+                                if (count > 1) {
+                                    System.out.println("Peringatan: Ditemukan beberapa dosen dengan usia yang sama!");
+                                    System.out.println("--------------------");
+                                    
+                                    break;
+                                }
+                            }
+                        }
+                    }
                     list.tampilSearchUsia(cariUsia, posisiUsia);
                     break;
                 case 7:

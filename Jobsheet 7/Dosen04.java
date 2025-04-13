@@ -21,7 +21,7 @@ public class Dosen04 {
         if (jenisKelamin) { // default true = laki-laki, false = perempuan
             System.out.println("Jenis Kelamin: Laki-Laki");
         } else {
-            System.out.println("Jenis Kelamin: Perempuam ");
+            System.out.println("Jenis Kelamin: Perempuan ");
 
         }
 

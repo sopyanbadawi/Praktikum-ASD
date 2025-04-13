@@ -88,7 +88,7 @@ public class DataDosen04 {
             if (dataDosen[pos].jenisKelamin) { // default true = laki-laki, false = perempuan
                 System.out.println("Jenis Kelamin: Laki-Laki");
             } else {
-                System.out.println("Jenis Kelamin: Perempuam ");
+                System.out.println("Jenis Kelamin: Perempuan ");
             }
         } else {
             System.out.println("Data dosen dengan nama: " + cariNama + " tidak ditemukan");
@@ -103,7 +103,7 @@ public class DataDosen04 {
             if (dataDosen[pos].jenisKelamin) { // default true = laki-laki, false = perempuan
                 System.out.println("Jenis Kelamin: Laki-Laki");
             } else {
-                System.out.println("Jenis Kelamin: Perempuam ");
+                System.out.println("Jenis Kelamin: Perempuan ");
             }
         } else {
             System.out.println("Data dosen dengan usia: " + cariUsia + " tidak ditemukan");
