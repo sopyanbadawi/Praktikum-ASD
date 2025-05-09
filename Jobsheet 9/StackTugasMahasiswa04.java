@@ -59,4 +59,20 @@ public class StackTugasMahasiswa04 {
         }
         System.out.println("");
     }
+
+    public Mahasiswa04 peekTugasPertama() {
+        if (!IsEmpty()) {
+            System.out.println("Nama\tNIM\tKelas");
+            System.out.println(stack[0].nama + "\t" + stack[0].nim + "\t" + stack[0].kelas);
+            return stack[0];
+        } else {
+            System.out.println("Stack masih kosong! Tidak ada tugas yang dikumpulkan");
+            return null;
+        }
+    }
+
+    public void banyakTugas() {
+        int banyakTerkumpul = top + 1;
+        System.out.println("Banyak yang sudah mengumpulkan tugas: " + banyakTerkumpul);
+    }
 }

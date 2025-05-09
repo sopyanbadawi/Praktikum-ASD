@@ -10,6 +10,8 @@ public class MahasiswaDemo04 {
             System.out.println("2. Menilai Tugas");
             System.out.println("3. Melihat Tugas Teratas");
             System.out.println("4. Melihat Daftar Tugas");
+            System.out.println("5. Melihat yang mengumpulkan pertama");
+            System.out.println("6. Cek berapa banyak yang mengumpulkan tugas");
             System.out.print("Masukkan pilihan: ");
             pilihan = sc.nextInt();
             switch (pilihan) {
@@ -46,10 +48,18 @@ public class MahasiswaDemo04 {
                     System.out.println("Nama\tNIM\tKelas");
                     stack.print();
                     break;
+                case 5:
+                    System.out.println("Mahasiswa yang mengumpulkan pertama: ");
+                    stack.peekTugasPertama();
+                    break;
+                case 6:
+                    stack.banyakTugas();
+                    break;
                 default:
                     System.out.println("Pilihan tidak valid!");
+                    break;
             }
             
-        } while (pilihan >= 1 && pilihan <= 4);
+        } while (pilihan >= 1 && pilihan <= 6);
     }
 }
