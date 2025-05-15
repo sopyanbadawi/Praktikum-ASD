@@ -53,6 +53,7 @@ public class StackSurat04 {
         }
     }
     
+    
     //public void print() {
     //    for (int i = top; i >= 0; i--) {
     //        System.out.println("Nama\tID Surat\tKelas\tJenis Izin\tDurasi");

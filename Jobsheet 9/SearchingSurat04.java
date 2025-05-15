@@ -1,5 +1,6 @@
 public class SearchingSurat04 {
 
+    
     void cariMahasiswa(String cari, StackSurat04 data) {
         int posisi = -1;
         for (int i = data.top; i >=0; i--) {

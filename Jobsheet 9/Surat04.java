@@ -3,6 +3,7 @@ public class Surat04 {
     char jenisIzin;
     int durasi;
 
+    
     Surat04() {
 
     }
