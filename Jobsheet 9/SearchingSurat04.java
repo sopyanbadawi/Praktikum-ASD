@@ -1,8 +1,5 @@
 public class SearchingSurat04 {
 
-    SearchingSurat04() {
-        
-    }
     void cariMahasiswa(String cari, StackSurat04 data) {
         int posisi = -1;
         for (int i = data.top; i >=0; i--) {
@@ -14,7 +11,7 @@ public class SearchingSurat04 {
                                      , surat.namaMahasiswa, surat.idSurat, surat.kelas, surat.durasi);
                 }
                 if (surat.jenisIzin == 'i' || surat.jenisIzin == 'I') {
-                    System.out.printf("Surat telah ditemukan.\nNama:%s\nId Surat:%s\nKelas:%s\nKeterangan: Izin\nDurasi:%s Jam\n"
+                    System.out.printf("Surat telah ditemukan.\nNama: %s\nId Surat: %s\nKelas: %s\nKeterangan: Izin\nDurasi: %s Jam\n"
                                      , surat.namaMahasiswa, surat.idSurat, surat.kelas, surat.durasi);
                 }
             }
