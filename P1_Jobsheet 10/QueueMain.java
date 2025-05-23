@@ -6,23 +6,26 @@ public class QueueMain {
         int n = sc.nextInt();
         Queue Q = new Queue(n);
         int pilih;
+        boolean lanjut = true;
 
         do {
             menu();
             System.out.print("Masukkan: ");
             pilih = sc.nextInt();
-
             switch (pilih) {
                 case 1:
                     System.out.print("Masukkan data baru: ");
                     int dataMasuk = sc.nextInt();
-                    Q.Enqueue(dataMasuk);
+                    lanjut = Q.Enqueue(dataMasuk);
                     break;
                 
                 case 2:
                     int dataKeluar = Q.Dequeue();
                     if (dataKeluar != 0) {
                         System.out.println("Data yang dikeluarkan: " + dataKeluar);
+                    } else {
+                        System.out.println("Queue Underflow!");
+                        lanjut = false;
                     }
                     break;
 
@@ -41,7 +44,7 @@ public class QueueMain {
                 default:
                     break;
             }
-        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5);
+        } while (pilih >= 1 && pilih <= 5 && lanjut);
     }
 
     public static void menu() {
