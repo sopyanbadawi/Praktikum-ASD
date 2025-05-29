@@ -37,16 +37,16 @@ public class SLLMain04 {
         do {
             System.out.println("Seluruh Data: ");
             sll.print();
-            System.out.print("Apakah ingin Menambah data baru?: ");
+            System.out.print("Apakah ingin menambah data baru?: ");
             jawab = sc.nextLine();
 
-            System.out.print("Masukkan nama mahasiswa : ");
+            System.out.print("Masukkan Nama Mahasiswa : ");
             String nama = sc.nextLine();
-            System.out.print("Masukkan nim mahasiswa : ");
+            System.out.print("Masukkan NIM Mahasiswa : ");
             String nim = sc.nextLine();
-            System.out.print("Masukkan kelas mahasiswa : ");
+            System.out.print("Masukkan Kelas Mahasiswa : ");
             String kelas = sc.nextLine();
-            System.out.print("Masukkan ipk mahasiswa : ");
+            System.out.print("Masukkan IPK Mahasiswa : ");
             double ipk = sc.nextDouble();
 
             Mahasiswa04 mhs = new Mahasiswa04(nim, nama, kelas, ipk);
@@ -55,9 +55,9 @@ public class SLLMain04 {
             System.out.println("Silahkan pilih menu: ");
             System.out.println("1. Menambahkan data Diawal");
             System.out.println("2. Menambahkan data Setelah Nama Tertentu");
-            System.out.println("3. Menambahkan data di index tertentu");
+            System.out.println("3. Menambahkan data di Index tertentu");
             System.out.println("4. Menambahkan data di Akhir");
-            System.out.print("Masukkan Pilihan mu : ");
+            System.out.print("Masukkan Pilihanmu : ");
             int jwbnMenu = sc.nextInt();
             sc.nextLine();
             switch (jwbnMenu) {
@@ -72,7 +72,7 @@ public class SLLMain04 {
                     sll.print();
                     break;
                 case 3: 
-                    System.out.print("Masukkan index tempat : ");
+                    System.out.print("Masukkan Index tempat : ");
                     int index = sc.nextInt();
                     sc.nextLine();
                     sll.insertAt(index, mhs);
