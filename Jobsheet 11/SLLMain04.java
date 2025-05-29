@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class SLLMain04 {
     public static void main(String[] args) {
         SingleLinkedList04 sll = new SingleLinkedList04();
@@ -29,5 +30,61 @@ public class SLLMain04 {
         sll.print();
         sll.removeAt(0);
         sll.print();
+
+        //Pertanyaan percobaan 1
+        Scanner sc = new Scanner(System.in);
+        String jawab = "";
+        do {
+            System.out.println("Seluruh Data: ");
+            sll.print();
+            System.out.print("Apakah ingin Menambah data baru?: ");
+            jawab = sc.nextLine();
+
+            System.out.print("Masukkan nama mahasiswa : ");
+            String nama = sc.nextLine();
+            System.out.print("Masukkan nim mahasiswa : ");
+            String nim = sc.nextLine();
+            System.out.print("Masukkan kelas mahasiswa : ");
+            String kelas = sc.nextLine();
+            System.out.print("Masukkan ipk mahasiswa : ");
+            double ipk = sc.nextDouble();
+
+            Mahasiswa04 mhs = new Mahasiswa04(nim, nama, kelas, ipk);
+
+            System.out.println();
+            System.out.println("Silahkan pilih menu: ");
+            System.out.println("1. Menambahkan data Diawal");
+            System.out.println("2. Menambahkan data Setelah Nama Tertentu");
+            System.out.println("3. Menambahkan data di index tertentu");
+            System.out.println("4. Menambahkan data di Akhir");
+            System.out.print("Masukkan Pilihan mu : ");
+            int jwbnMenu = sc.nextInt();
+            sc.nextLine();
+            switch (jwbnMenu) {
+                case 1:
+                    sll.addFirst(mhs);
+                    sll.print();
+                    break;
+                case 2:
+                    System.out.print("Masukkan Nama yang ingin di cari : ");
+                    String dicari = sc.nextLine();
+                    sll.insertAfter(dicari, mhs);
+                    sll.print();
+                    break;
+                case 3: 
+                    System.out.print("Masukkan index tempat : ");
+                    int index = sc.nextInt();
+                    sc.nextLine();
+                    sll.insertAt(index, mhs);
+                    sll.print();
+                    break;
+                case 4:
+                    sll.addLast(mhs);
+                    sll.print();
+                    break;
+                default:
+                    break;
+            }
+        } while (jawab.equalsIgnoreCase("ya") || jawab.equalsIgnoreCase("y"));
     }
 }
