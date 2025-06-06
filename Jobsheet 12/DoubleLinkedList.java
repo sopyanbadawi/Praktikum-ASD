@@ -35,6 +35,9 @@ public class DoubleLinkedList {
 
     public void print() {
         Node04 current = head;
+        if (isEmpty()) {
+            System.out.println("Warning! Linked List Masih Kosong");
+        }
         while (current != null) {
             current.data.tampil();
             current = current.next;
