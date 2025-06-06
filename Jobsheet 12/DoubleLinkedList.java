@@ -56,10 +56,28 @@ public class DoubleLinkedList {
     }
 
     public void removeFirst() {
-
+        if (isEmpty()) {
+            System.out.println("List Kosong, tidak ada yang dihapus.");
+            return;
+        }
+        if (head == tail) {
+            head = tail= null;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
     }
     public void removeLast() {
-
+        if (isEmpty()) {
+            System.out.println("List Kosong, tidak ada yang dihapus.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+        }
     }
 
     public void insertAfter(String keyNIM, Mahasiswa04 data) {
