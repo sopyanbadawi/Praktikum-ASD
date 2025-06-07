@@ -10,7 +10,7 @@ public class DoubleLinkedListMain {
         String kelas = scan.nextLine();
         System.out.print("Masukkan IPK: ");
         double ipk = scan.nextDouble();
-        return new Mahasiswa04(nama, nim, kelas, ipk);
+        return new Mahasiswa04(nim, nama, kelas, ipk);
     }
     public static void main(String[] args) {
         DoubleLinkedList list = new DoubleLinkedList();
