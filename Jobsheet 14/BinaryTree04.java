@@ -165,4 +165,96 @@ public class BinaryTree04 {
             }
         }
     }
+
+    public void addRekursif(Mahasiswa04 mahasiswa) {
+        if (isEmpty()) {
+            root = new Node04(mahasiswa);
+        } else {
+            Node04 current = root;
+            while (true) {
+                if (mahasiswa.ipk < current.mahasiswa.ipk) {
+                    if (current.left == null) {
+                        current.left = new Node04(mahasiswa);
+                        break;
+                    } else {
+                        current = current.left;
+                    }
+                } else if (mahasiswa.ipk > current.mahasiswa.ipk) {
+                    if (current.right == null) {
+                        current.right = new Node04(mahasiswa);
+                        break;
+                    } else {
+                        current = current.right;
+                    }
+                } else {
+                    break; // IPK sudah ada
+                }
+            }
+        }
+    }
+
+    public void cariMinIPK() {
+        if (isEmpty()) {
+            System.out.println("Tree kosong");
+        }
+    
+        Node04 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        System.out.println("\nMahasiswa dengan IPK terendah: ");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    public void cariMaxIPK() {
+        if (isEmpty()) {
+            System.out.println("Tree kosong");
+        }
+        
+        Node04 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        System.out.println("\nMahasiswa dengan IPK tertinggi: ");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    public void tampilMahasiswaIPKdiAtas(double ipkBatas) {
+        if (isEmpty()) {
+            System.out.println("Tree kosong");
+            return;
+        }
+        
+        System.out.println("\nMahasiswa dengan IPK di atas " + ipkBatas + ":");
+        Node04 current = root;
+        Node04 prev = null;
+        
+        while (current != null) {
+            if (current.left == null) {
+                // Proses node saat ini
+                if (current.mahasiswa.ipk > ipkBatas) {
+                    current.mahasiswa.tampilInformasi();
+                }
+                current = current.right;
+            } else {
+                // Temukan predecessor
+                prev = current.left;
+                while (prev.right != null && prev.right != current) {
+                    prev = prev.right;
+                }
+                
+                if (prev.right == null) {
+                    prev.right = current;
+                    current = current.left;
+                } else {
+                    prev.right = null;
+                    // Proses node saat ini
+                    if (current.mahasiswa.ipk > ipkBatas) {
+                        current.mahasiswa.tampilInformasi();
+                    }
+                    current = current.right;
+                }
+            }
+        }
+    }
 }   

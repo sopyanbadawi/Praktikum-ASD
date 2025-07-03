@@ -20,4 +20,23 @@ public class BinaryTreeArray04 {
             }
         }
     }
+    
+    void traversPreOrder(int idxStart) {
+        if (idxStart <= idxLast) {
+            if (dataMahasiswa[idxStart] != null) {
+                dataMahasiswa[idxStart].tampilInformasi();
+                traversPreOrder(2*idxStart+1);
+                traversPreOrder(2*idxStart+2);
+            }
+        }
+    }
+
+    void add(Mahasiswa04 data) {
+        if (idxLast < dataMahasiswa.length - 1) {
+            idxLast++;
+            dataMahasiswa[idxLast] = data;
+        } else {
+            System.out.println("Kapasitas (array) sudah penuh, tidak bisa menambahkan data");
+        }
+    }
 }

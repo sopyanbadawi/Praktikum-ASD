@@ -34,5 +34,15 @@ public class BinaryTreeMain {
         bst.delete(3.57);
         System.out.println("\nDaftar semua mahasiswa setelah penghapusan 1 mahasiswa (in order): ");
         bst.traverseInOrder(bst.root);
+        
+        bst.addRekursif(new Mahasiswa04("244107020", "Dawi", "B", 3.69));
+        System.out.println("\nHasil Penambahan Rekursif:");
+        bst.traverseInOrder(bst.root);
+
+        bst.cariMinIPK();
+        bst.cariMaxIPK();
+        bst.tampilMahasiswaIPKdiAtas(3.5);
+
+        
     }
 }
